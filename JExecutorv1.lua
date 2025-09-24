@@ -482,9 +482,9 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 	local Bind1 = AbaCFG:WaitForChild("Bind1")
 	
 	
-	-- tecla padr„o
+	-- tecla padr√£o
 	local MinimizeKey = Enum.KeyCode.H
-	local ListeningForKey = false -- flag para saber se estamos esperando a prÛxima tecla
+	local ListeningForKey = false -- flag para saber se estamos esperando a pr√≥xima tecla
 	
 	local function initinterface()
 		_G.Inited = true
@@ -495,8 +495,8 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 		game.StarterGui:SetCore("SendNotification", {
 			Title = "JExecutor v1.0",
 			Text = "Executor Carregado",
-			Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-			Duration = 2 -- Opcional: DuraÁ„o em segundos
+			Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+			Duration = 2 -- Opcional: Dura√ß√£o em segundos
 		})
 	end
 	
@@ -504,10 +504,10 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 		game.StarterGui:SetCore("SendNotification", {
 			Title = "JExecutor v1.0",
 			Text = "Carregando Recursos...",
-			Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-			Duration = 2 -- Opcional: DuraÁ„o em segundos
+			Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+			Duration = 2 -- Opcional: Dura√ß√£o em segundos
 		})
-		-- deixa tudo invisÌvel no comeÁo
+		-- deixa tudo invis√≠vel no come√ßo
 		InitFrame.Visible = true
 		InitFrame.BackgroundTransparency = 1
 		textinit.TextTransparency = 1
@@ -548,7 +548,7 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 		initinterface()
 	end
 	
-	-- funÁ„o que minimiza/restaura
+	-- fun√ß√£o que minimiza/restaura
 	local function MinimizeExecutor()
 		if _G.CanMinimize then
 			if _G.Minimized then
@@ -590,7 +590,7 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 	InputService.InputBegan:Connect(function(input, gameProcessed)
 		if gameProcessed or input.UserInputType ~= Enum.UserInputType.Keyboard then return end
 		if ListeningForKey then
-			-- jogador est· escolhendo um novo bind
+			-- jogador est√° escolhendo um novo bind
 			if input.UserInputType == Enum.UserInputType.Keyboard then
 				MinimizeKey = input.KeyCode
 				ListeningForKey = false
@@ -599,19 +599,19 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 				game.StarterGui:SetCore("SendNotification", {
 					Title = "JExecutor v1.0 - Config",
 					Text = "Executor Bind Alterada para:" .. MinimizeKey.Name,
-					Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-					Duration = 2 -- Opcional: DuraÁ„o em segundos
+					Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+					Duration = 2 -- Opcional: Dura√ß√£o em segundos
 				})
 			end
 		else
-			-- checa se a tecla pressionada È o bind salvo
+			-- checa se a tecla pressionada √© o bind salvo
 			if input.KeyCode == MinimizeKey then
 				MinimizeExecutor()
 			end
 		end
 	end)
 	
-	-- quando clicar no Bind1, comeÁa a ouvir a prÛxima tecla
+	-- quando clicar no Bind1, come√ßa a ouvir a pr√≥xima tecla
 	Bind1.MouseButton1Click:Connect(function()
 		ListeningForKey = true
 		Bind1.Text = "..."
@@ -636,38 +636,38 @@ local function ISOWFC_fake_script() -- exguimain.mainscript
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "JExecutor v1.0 - Resources",
 				Text = "Executando Resource".. MenuResourceText1.Text,
-				Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-				Duration = 2 -- Opcional: DuraÁ„o em segundos
+				Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+				Duration = 2 -- Opcional: Dura√ß√£o em segundos
 			})
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/JoaopedrooXD17/JMenuLibraries/refs/heads/main/JMenuLegitv1.lua'))()
 			wait(2)
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "JExecutor v1.0 - Resources",
 				Text = "Resource " .. MenuResourceText1.Text, " Executada",
-				Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-				Duration = 2 -- Opcional: DuraÁ„o em segundos
+				Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+				Duration = 2 -- Opcional: Dura√ß√£o em segundos
 			})
 			
 		elseif KeepExecutor == false then
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "JExecutor v1.0 - Resources",
 				Text = "Executando Resource ".. MenuResourceText1.Text,
-				Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-				Duration = 2 -- Opcional: DuraÁ„o em segundos
+				Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+				Duration = 2 -- Opcional: Dura√ß√£o em segundos
 			})
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/JoaopedrooXD17/JMenuLibraries/refs/heads/main/JMenuLegitv1.lua'))()
 			wait(2)
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "JExecutor v1.0 - Resources",
 				Text = "Resource " .. MenuResourceText1.Text, " Executada",
-				Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-				Duration = 2 -- Opcional: DuraÁ„o em segundos
+				Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+				Duration = 2 -- Opcional: Dura√ß√£o em segundos
 			})
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "JExecutor v1.0 - Config",
-				Text = "FunÁ„o KeepExecutor Desabilitada, Destruindo Executor...",
-				Icon = "rbxassetid://111696040961766", -- Opcional: URL do Ìcone da notificaÁ„o
-				Duration = 2 -- Opcional: DuraÁ„o em segundos
+				Text = "Fun√ß√£o KeepExecutor Desabilitada, Destruindo Executor...",
+				Icon = "rbxassetid://111696040961766", -- Opcional: URL do √≠cone da notifica√ß√£o
+				Duration = 2 -- Opcional: Dura√ß√£o em segundos
 			})
 			exguimain:Destroy()
 		end
