@@ -556,8 +556,8 @@ local function KUOH_fake_script() -- Aimbotframe.Main
 	end
 	
 	local bindaimbot = agressiveaimbtn:WaitForChild('Bind1')
-	local AimbotKeyCode = Enum.KeyCode.Unknown -- padr„o teclado
-	local AimbotInputType = Enum.UserInputType.Keyboard -- padr„o tipo de input
+	local AimbotKeyCode = Enum.KeyCode.Unknown -- padr√£o teclado
+	local AimbotInputType = Enum.UserInputType.Keyboard -- padr√£o tipo de input
 	local ListeningForKey = false
 	
 	bindaimbot.MouseButton1Click:Connect(function()
@@ -585,7 +585,7 @@ local function KUOH_fake_script() -- Aimbotframe.Main
 			return
 		end
 	
-		-- Detectar quando o bind È pressionado
+		-- Detectar quando o bind √© pressionado
 		if (input.UserInputType == AimbotInputType and (AimbotInputType ~= Enum.UserInputType.Keyboard or input.KeyCode == AimbotKeyCode)) then
 			Holding = true
 		end
@@ -663,7 +663,7 @@ local function KUOH_fake_script() -- Aimbotframe.Main
 				local relativePos = mouseLoc - settingsframe.AbsolutePosition
 				local percentage = math.clamp(relativePos.X / settingsframe.AbsoluteSize.X, 0, 1)
 	
-				-- Ajuste a posiÁ„o do cÌrculo
+				-- Ajuste a posi√ß√£o do c√≠rculo
 				WSpeedBtn.Position = UDim2.new(percentage, 0, 0, 0)
 				_G.raio = math.round(percentage * 300)
 				_G.CircleSize = UDim2.new(0, _G.raio * 2, 0, _G.raio * 2)
@@ -718,7 +718,7 @@ local function KUOH_fake_script() -- Aimbotframe.Main
 				local relativePos = mouseLoc - settingsframe.AbsolutePosition
 				local percentage = math.clamp(relativePos.X / settingsframe.AbsoluteSize.X, 0, 1)
 	
-				-- Ajusta a posiÁ„o do slider
+				-- Ajusta a posi√ß√£o do slider
 				local minValue = 0
 				local maxValue = 1
 				local step = 0.1
@@ -774,7 +774,7 @@ local function KUOH_fake_script() -- Aimbotframe.Main
 				local mouseLoc = UIS:GetMouseLocation()
 				local relativePos = mouseLoc - settingsframe.AbsolutePosition
 				local percentage = math.clamp(relativePos.X / settingsframe.AbsoluteSize.X, 0, 1)
-				-- Ajuste a posiÁ„o do cÌrculo
+				-- Ajuste a posi√ß√£o do c√≠rculo
 				WSpeedBtn.Position = UDim2.new(percentage, 0, 0, 0)
 				_G.Parte = math.round(percentage * 2)
 				if _G.Parte == 0 then
